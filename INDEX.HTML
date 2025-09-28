@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Daily Routine App</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<header>
+    <h1>Student Daily Routine App</h1>
+</header>
+
+<nav>
+    <button class="tab-btn active" onclick="openTab('login')">Login</button>
+</nav>
+
+<main>
+    <!-- Login -->
+    <section id="login" class="tab-content">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter Name" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <!-- Main App -->
+    <section id="app" class="tab-content">
+        <nav class="tab-nav">
+            <button class="tab-btn active" onclick="openTab('routine')">Routine</button>
+            <button class="tab-btn" onclick="openTab('meals')">Meals</button>
+            <button class="tab-btn" onclick="openTab('gym')">Gym</button>
+            <button class="tab-btn" onclick="openTab('notes')">Notes</button>
+            <button class="tab-btn" onclick="openTab('classwork')">Classwork</button>
+            <button class="tab-btn" onclick="openTab('homework')">Homework</button>
+            <button class="tab-btn" onclick="openTab('reminders')">Reminders</button>
+        </nav>
+
+        <!-- Routine -->
+        <section id="routine" class="tab-content">
+            <h2>Daily Routine</h2>
+            <form id="routineForm">
+                <label>Wake Up: <input type="time" id="wakeUp"></label>
+                <label>Sleep: <input type="time" id="sleep"></label>
+                <label>Study Hours: <input type="text" id="studyHours" placeholder="e.g. 3 hours"></label>
+                <button type="submit">Save Routine</button>
+            </form>
+            <div id="routineDisplay"></div>
+        </section>
+
+        <!-- Meals -->
+        <section id="meals" class="tab-content">
+            <h2>Meals</h2>
+            <form id="mealForm">
+                <input type="text" id="breakfast" placeholder="Breakfast">
+                <input type="text" id="lunch" placeholder="Lunch">
+                <input type="text" id="dinner" placeholder="Dinner">
+                <button type="submit">Save Meals</button>
+            </form>
+            <div id="mealDisplay"></div>
+        </section>
+
+        <!-- Gym -->
+        <section id="gym" class="tab-content">
+            <h2>Gym</h2>
+            <form id="gymForm">
+                <input type="time" id="gymTime">
+                <input type="text" id="exercises" placeholder="Exercises">
+                <button type="submit">Save Gym</button>
+            </form>
+            <div id="gymDisplay"></div>
+        </section>
+
+        <!-- Notes -->
+        <section id="notes" class="tab-content">
+            <h2>Notes</h2>
+            <form id="notesForm">
+                <textarea id="noteText" placeholder="Write notes..."></textarea>
+                <button type="submit">Add Note</button>
+            </form>
+            <ul id="notesList"></ul>
+        </section>
+
+        <!-- Classwork -->
+        <section id="classwork" class="tab-content">
+            <h2>Classwork</h2>
+            <form id="classworkForm">
+                <input type="text" id="classworkText" placeholder="Classwork">
+                <button type="submit">Add</button>
+            </form>
+            <ul id="classworkList"></ul>
+        </section>
+
+        <!-- Homework -->
+        <section id="homework" class="tab-content">
+            <h2>Homework</h2>
+            <form id="homeworkForm">
+                <input type="text" id="homeworkText" placeholder="Homework">
+                <button type="submit">Add</button>
+            </form>
+            <ul id="homeworkList"></ul>
+        </section>
+
+        <!-- Reminders -->
+        <section id="reminders" class="tab-content">
+            <h2>Reminders</h2>
+            <form id="reminderForm">
+                <input type="text" id="reminderText" placeholder="Reminder" required>
+                <input type="datetime-local" id="reminderTime" required>
+                <button type="submit">Add Reminder</button>
+            </form>
+            <ul id="reminderList"></ul>
+        </section>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
